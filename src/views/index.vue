@@ -1,22 +1,18 @@
 <template>
-  <div>
-    <Nav></Nav>
-    <router-view />
+  <div class="index">
+    1111
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import Nav from '@/components/Nav.vue';
-
+import Container from '@/components/container.vue';
 @Component({
   components: {
-    Nav,
+    Container,
   },
 })
-export default class Index extends Vue {
-  @Prop() private msg!: string;
-}
+export default class Index extends Vue {}
 </script>
 
 <style lang="scss" scoped></style>

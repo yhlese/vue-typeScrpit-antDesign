@@ -1,16 +1,16 @@
 export default {
   path: '/content',
   component: () => import('@/views/content/index.vue'),
-  children: ((pre) => [
+  children: (pre => [
     {
       path: '/content/article',
-      name: `${pre}`,
-      component: () => import(`@/views/${pre}/article/inde.vue`),
+      name: `${pre}-article`,
+      component: () => import(`@/views/${pre}/article/index.vue`),
     },
     {
-      path: '/content/article',
-      name: `${pre}`,
-      component: () => import(`@/views/${pre}/article/inde.vue`),
+      path: '/content/project',
+      name: `${pre}-project`,
+      component: () => import(`@/views/${pre}/project/index.vue`),
     },
   ])('content'),
 };

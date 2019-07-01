@@ -13,4 +13,8 @@ module.exports = {
   tabWidth: 2,
   // 将在语句末尾加上 ;
   semi: true,
+  // JSX 后面 >
+  jsxBracketSameLine: false,
+  // 在一个单箭头函数参数周围加上括号。
+  bracketSpacing: true
 };

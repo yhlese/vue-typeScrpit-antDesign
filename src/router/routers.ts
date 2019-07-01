@@ -1,13 +1,10 @@
 const files = require.context('./modules', false, /\.ts$/);
 const ROUTERS: any = [];
 
-files.keys().forEach((key) => {
+files.keys().forEach(key => {
   ROUTERS.push(files(key).default);
 });
-const frameIn = [
-  ...ROUTERS,
-];
-
+const frameIn = [...ROUTERS];
 
 const frameOut = [
   {
@@ -18,7 +15,10 @@ const frameOut = [
   {
     path: '/login',
     name: 'Login',
-    component: () => import('@/views/Login.vue'),
+    meta: {
+      frameOut: true,
+    },
+    component: () => import('@/views/login/index.vue'),
   },
 ];
 
