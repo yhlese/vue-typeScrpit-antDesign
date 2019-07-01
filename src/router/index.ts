@@ -5,7 +5,7 @@ Vue.use(Router);
 
 const ROUTER = new Router({
   mode: 'history',
-  routes
+  routes,
 });
 
 export default ROUTER;
