@@ -20,6 +20,5 @@ export const menuAside = [
         path: '/content/project',
       },
     ],
-
   },
 ];
