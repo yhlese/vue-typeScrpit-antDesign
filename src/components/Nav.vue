@@ -1,25 +1,24 @@
 <template>
   <div class="nav">
-    <a-button type="primary" @click="toggleCollapsed" style="margin-bottom: 16px">
-      <a-icon :type="collapsed ? 'menu-unfold' : 'menu-fold'" />
-    </a-button>
-    <a-menu
-      mode="inline"
-      theme="light"
-      :defaultSelectedKeys="defaultSelectedKeys"
-      :inlineCollapsed="collapsed"
-    >
-      <template v-for="m in menuAside">
-        <a-menu-item v-if="!m.children" :key="m.path">
-          <a-icon :type="m.icon" />
-          <span>{{ m.title }}</span>
+    <a-menu mode="inline"
+            theme="dark"
+            :defaultSelectedKeys="defaultSelectedKeys"
+            :inlineCollapsed="collapsed"
+            @click="routerTo">
+      <template v-for="(menu) in menuAside">
+        <a-menu-item v-if="!menu.children"
+                     :key="menu.path">
+          <a-icon :type="menu.icon" />
+          <span>{{ menu.title}}</span>
         </a-menu-item>
-        <a-sub-menu v-else :key="m.path">
+        <a-sub-menu v-else
+                    :key="menu.path">
           <span slot="title">
-            <a-icon :type="m.icon" />
-            <span>{{ m.title }}</span>
+            <a-icon :type="menu.icon" />
+            <span>{{ menu.title }}</span>
           </span>
-          <a-menu-item v-for="(mc, i) in m.children" :key="i">{{ mc.title }}</a-menu-item>
+          <a-menu-item v-for="(menuChild, i) in menu.children"
+                       :key="i">{{ menuChild.title }}</a-menu-item>
         </a-sub-menu>
       </template>
     </a-menu>
@@ -27,27 +26,28 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { Button, Menu, Icon } from 'ant-design-vue';
+import { Component, Prop, Vue, PropSync, Watch } from 'vue-property-decorator';
 import { menuAside } from '@/router/menu';
 
-@Component({
-  components: {
-    [Button.name]: Button,
-    [Menu.name]: Menu,
-    [Icon.name]: Icon,
-    [Menu.Item.name]: Menu.Item,
-    [Menu.SubMenu.name]: Menu.SubMenu,
-  },
-})
+@Component
 export default class Nav extends Vue {
   // initial data
-  private collapsed: boolean = false;
   private menuAside: any = menuAside;
   private defaultSelectedKeys: string[] = ['/'];
 
-  private toggleCollapsed() {
-    this.collapsed = !this.collapsed;
+  @Prop({ default: false, type: Boolean }) readonly collapsed!: boolean;
+
+  @Watch('$route')
+  routeChange(newVal: any) {
+    const { fullPath } = newVal;
+    this.defaultSelectedKeys[0] = fullPath;
+  }
+
+  private routerTo({ item, key, keyPath }: any) {
+    let { [keyPath.length - 1]: path } = keyPath;
+    this.$router.push({
+      path,
+    });
   }
 }
 </script>

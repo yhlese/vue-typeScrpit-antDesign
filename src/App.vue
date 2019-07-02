@@ -16,4 +16,8 @@ export default class App extends Vue {
   private frameOut: boolean = false;
 }
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#app {
+  height: 100%;
+}
+</style>
