@@ -1,17 +1,16 @@
 <template>
   <a-layout id="components-layout-demo-custom-trigger">
-    <a-layout-sider :trigger="null"
-                    collapsible
-                    v-model="collapsed">
+    <a-layout-sider :trigger="null" collapsible v-model="collapsed">
       <div class="logo" />
-      <Nav ref="refNav"
-           :collapsed="collapsed"></Nav>
+      <Nav ref="refNav" :collapsed="collapsed"></Nav>
     </a-layout-sider>
     <a-layout>
       <a-layout-header class="lay-header">
-        <a-icon class="trigger"
-                :type="collapsed ? 'menu-unfold' : 'menu-fold'"
-                @click="toggleCollapsed" />
+        <a-icon
+          class="trigger"
+          :type="collapsed ? 'menu-unfold' : 'menu-fold'"
+          @click="toggleCollapsed"
+        />
         <header-side></header-side>
       </a-layout-header>
       <a-layout-content class="lay-content">

@@ -14,5 +14,4 @@ export default {
       component: () => import(`@/views/${pre}/set.vue`),
     },
   ])('setting'),
-
-}
+};

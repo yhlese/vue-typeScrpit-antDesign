@@ -1,7 +1,6 @@
 <template>
   <a-dropdown class="header-side">
-    <a class="ant-dropdown-link"
-       href="#">
+    <a class="ant-dropdown-link" href="#">
       <a-icon type="user" />
       用户名
       <a-icon type="down" />

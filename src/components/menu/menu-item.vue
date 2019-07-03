@@ -5,12 +5,11 @@
   </a-menu-item>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class App extends Vue {
   @Prop({ type: Object, default: () => {} }) menu: any;
 }
 </script>
-<style lang = 'scss' scoped>
-</style>
+<style lang="scss" scoped></style>

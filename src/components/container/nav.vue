@@ -1,14 +1,15 @@
 <template>
   <div class="nav">
-    <a-menu mode="inline"
-            theme="dark"
-            :defaultSelectedKeys="defaultSelectedKeys"
-            :inlineCollapsed="collapsed"
-            :defaultOpenKeys="defaultOpenKeys"
-            @click="routerTo">
+    <a-menu
+      mode="inline"
+      theme="dark"
+      :defaultSelectedKeys="defaultSelectedKeys"
+      :inlineCollapsed="collapsed"
+      :defaultOpenKeys="defaultOpenKeys"
+      @click="routerTo"
+    >
       <template v-for="menu in menuAside">
-        <a-menu-item v-if="!menu.children"
-                     :key="menu.path">
+        <a-menu-item v-if="!menu.children" :key="menu.path">
           <a-icon :type="menu.icon" />
           <span>{{ menu.title }}</span>
         </a-menu-item>
@@ -16,15 +17,13 @@
                    :key="menu.path"
                    :menu="menu"> 
         </menu-item>-->
-        <a-sub-menu v-else
-                    :key="menu.path">
+        <a-sub-menu v-else :key="menu.path">
           <span slot="title">
             <a-icon :type="menu.icon" />
             <span>{{ menu.title }}</span>
           </span>
-          <a-menu-item v-for="menuChild in menu.children"
-                       :key="menuChild.path">{{
-            menuChild.title 
+          <a-menu-item v-for="menuChild in menu.children" :key="menuChild.path">{{
+            menuChild.title
           }}</a-menu-item>
         </a-sub-menu>
       </template>
