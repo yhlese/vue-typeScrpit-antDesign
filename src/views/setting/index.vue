@@ -1,7 +1,5 @@
 <template>
-  <div class="project">
-    project
-  </div>
+  <router-view />
 </template>
 
 <script lang='ts'>

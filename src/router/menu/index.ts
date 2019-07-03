@@ -1,3 +1,6 @@
+/**
+ * description：左侧菜单栏配置
+ */
 export const menuAside = [
   {
     title: '内容',

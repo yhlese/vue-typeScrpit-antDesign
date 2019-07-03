@@ -6,7 +6,7 @@
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import Container from '@/components/container.vue';
+import Container from '@/components/container/index.vue';
 @Component({
   components: {
     Container,

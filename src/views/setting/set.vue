@@ -1,6 +1,6 @@
 <template>
-  <div class="project">
-    project
+  <div>
+    设置
   </div>
 </template>
 
