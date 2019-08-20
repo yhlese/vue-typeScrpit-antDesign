@@ -1,7 +1,6 @@
 <template>
   <div class="article">
-    <a-input v-formatNum:0="value"
-             v-model="value"></a-input>
+    <a-input v-formatNum:0="value" v-model="value"></a-input>
   </div>
 </template>
 
