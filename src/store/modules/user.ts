@@ -1,20 +1,19 @@
-import { MutationTree, ActionTree } from 'vuex';
-
+import { MutationTree, ActionTree, GetterTree } from 'vuex';
 interface UserState {
   userInfo: any;
-  role: number | string;
 }
 interface RootState {}
-
 const state: UserState = {
   // 用户信息
   userInfo: {
     name: '管理员用户',
   },
-  // 登录角色
-  role: 1,
 };
-
+const getters: GetterTree<UserState, RootState> = {
+  getterName(state: any) {
+    return `这是我的账号名称：${state.userInfo.name}`;
+  },
+};
 const mutations: MutationTree<UserState> = {
   SET_USER_INFO(state: any, val: any) {
     state.userInfo = val;
@@ -23,16 +22,12 @@ const mutations: MutationTree<UserState> = {
     state.role = val;
   },
 };
-
 const actions: ActionTree<UserState, RootState> = {
-  SET_LOGOUT({ commit }, hasConfirm: boolean = true) {
-    console.log(commit);
+  GET_USER_INFO({ commit }) {
+    setTimeout(() => {
+      commit('SET_USER_INFO', { name: '这是从接口获取来的名称' });
+    }, 3000);
   },
 };
 
-export default {
-  namespaced: true,
-  state,
-  mutations,
-  actions,
-};
+export default { namespaced: 'user', state, mutations, actions, getters };

@@ -12,7 +12,6 @@ const modules: any = {};
 files.keys().forEach((key): void => {
   modules[key.replace(/(\.\/|\.ts)/g, '')] = files(key).default;
 });
-
 export default new Vuex.Store({
   modules,
 });
