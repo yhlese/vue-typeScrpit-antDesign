@@ -3,7 +3,8 @@
     <a-button @click="clickSave">保存</a-button>
     <a-button @click="clickConfirm">确认</a-button>
     <!-- 父组件 -->
-    <child-info v-model="lovingVue"> </child-info>
+    <child-info v-model="lovingVue"></child-info>
+    lovingVue: {{lovingVue}}
   </div>
 </template>
 
