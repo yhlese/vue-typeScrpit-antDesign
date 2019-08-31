@@ -1,14 +1,10 @@
 <template>
   <div class="article">
-    <a-input v-formatNum:0="value"
-             v-model="value"></a-input>
+    <a-input v-formatNum:0="value" v-model="value"></a-input>
     <a-button @click="goAdd">添加</a-button>
-    <span ref="textRef"
-          @click="getRef">获取ref</span>
+    <span ref="textRef" @click="getRef">获取ref</span>
 
-    <save-info @parentSave="saveMsg"
-               @parentConfirm="confirmMsg"
-               ref="saveInfoRef"></save-info>
+    <save-info @parentSave="saveMsg" @parentConfirm="confirmMsg" ref="saveInfoRef"></save-info>
   </div>
 </template>
 
@@ -30,7 +26,7 @@ export default class App extends Vue {
    * 小坑：如果同时存在 @ProvideReactive 和  @Provide 要将@ProvideReactive 写在前面否则会报错
    */
   @ProvideReactive() msg = '父组件msg';
-  
+
   // 父组件
   @Provide() foo = 'parentFoo';
   @Provide('bar') baz = 'parentBar';
