@@ -1,10 +1,10 @@
 <template>
   <div>
-    <input v-model="name">
-    <span>{{2 | filterDateTime}}</span>
+    <input v-model="name" />
+    <span>{{ 2 | filterDateTime }}</span>
   </div>
 </template>
- 
+
 <script>
 import Vue from 'vue';
 import { Component, Ref } from 'vue-property-decorator';

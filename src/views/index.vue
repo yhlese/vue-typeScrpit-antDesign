@@ -11,10 +11,6 @@ import { State, Getter, Action, Mutation } from 'vuex-class';
 @Component
 export default class Index extends Vue {
   @State(state => state.userInfo) stateUserInfo: any; // @State('userInfo') stateUserInfo: any;
-  
-
-
-
 }
 </script>
 

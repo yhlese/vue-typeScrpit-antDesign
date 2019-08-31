@@ -1,13 +1,9 @@
 <template>
   <div class="article">
-    <a-input v-formatNum:0="value"
-             v-model="value"></a-input>
+    <a-input v-formatNum:0="value" v-model="value"></a-input>
     <a-button @click="goAdd">添加</a-button>
-    <span ref="textRef"
-          @click="getRef">获取ref</span>
-    <save-info @parentSave="saveMsg"
-               @parentConfirm="confirmMsg"
-               ref="saveInfoRef"></save-info>
+    <span ref="textRef" @click="getRef">获取ref</span>
+    <save-info @parentSave="saveMsg" @parentConfirm="confirmMsg" ref="saveInfoRef"></save-info>
   </div>
 </template>
 

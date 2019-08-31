@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import { Component, Vue, Prop, PropSync, Emit } from 'vue-property-decorator';
 import ChildInfo from './childInfo.vue';
 
@@ -47,5 +47,4 @@ export default class SaveInfo extends Vue {
   }
 }
 </script>
-<style lang='scss' scoped>
-</style>
+<style lang="scss" scoped></style>
