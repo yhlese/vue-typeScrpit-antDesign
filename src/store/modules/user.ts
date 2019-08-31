@@ -8,7 +8,9 @@ interface RootState {}
 
 const state: UserState = {
   // 用户信息
-  userInfo: {},
+  userInfo: {
+    name:'管理员用户'
+  },
   // 登录角色
   role: 1,
 };
