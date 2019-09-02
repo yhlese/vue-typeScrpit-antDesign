@@ -10,6 +10,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { State, Getter, Action, Mutation, namespace } from 'vuex-class';
+import { storeInfoSetting } from "@/utils/userSetting";
 @Component
 export default class Index extends Vue {
   @State(state => state.user.userInfo) stateUserInfo: any;
@@ -24,6 +25,9 @@ export default class Index extends Vue {
   }
   getInfo() {
     this._getInfo();
+  }
+  created(){
+    console.log(storeInfoSetting)
   }
 }
 </script>
