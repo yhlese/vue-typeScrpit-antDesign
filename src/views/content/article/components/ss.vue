@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import SaveInfo from './saveInfo.vue';
 
@@ -33,5 +33,4 @@ export default class App extends Vue {
   }
 }
 </script>
-<style lang='scss' scoped>
-</style>
+<style lang="scss" scoped></style>

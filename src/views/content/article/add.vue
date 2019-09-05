@@ -6,14 +6,18 @@
     <!-- 表单 -->
     <div>
       <a-form :form="form">
-        <a-form-item :label-col="formItemLayout.labelCol"
-                     :wrapper-col="formItemLayout.wrapperCol"
-                     label="Name">
-          <a-input v-decorator="[
-                  'username',
-                  {rules: [{ required: true, message: 'Please input your name' }]}
-                ]"
-                   placeholder="Please input your name" />
+        <a-form-item
+          :label-col="formItemLayout.labelCol"
+          :wrapper-col="formItemLayout.wrapperCol"
+          label="Name"
+        >
+          <a-input
+            v-decorator="[
+              'username',
+              { rules: [{ required: true, message: 'Please input your name' }] },
+            ]"
+            placeholder="Please input your name"
+          />
         </a-form-item>
       </a-form>
     </div>
