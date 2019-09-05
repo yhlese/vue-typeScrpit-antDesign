@@ -27,7 +27,8 @@ export default class Index extends Vue {
     this._getInfo();
   }
   created() {
-    console.log(storeInfoSetting);
+    this.log(111);
+    console.log('created');
   }
 }
 </script>
