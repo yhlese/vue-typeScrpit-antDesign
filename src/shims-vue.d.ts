@@ -7,4 +7,5 @@ declare module '*.vue' {
   export default Vue;
 }
 
+// 引用原有模块
 declare module 'echarts';
