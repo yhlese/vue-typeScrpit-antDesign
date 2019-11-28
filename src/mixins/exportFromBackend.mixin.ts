@@ -1,4 +1,4 @@
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class AgentDialogMixin extends Vue {
@@ -16,14 +16,14 @@ export default class AgentDialogMixin extends Vue {
     name += ` ${year}-${month}-${day}`;
     try {
       let res = await (<any>this).$axios.get(url, {
-        responseType: "blob",
-        params
+        responseType: 'blob',
+        params,
       });
       if (!res) {
         return;
       }
       var blob = new Blob([res]);
-      var downloadElement = document.createElement("a");
+      var downloadElement = document.createElement('a');
       var href = window.URL.createObjectURL(blob);
       downloadElement.href = href;
       downloadElement.download = `${name}.xlsx`;
