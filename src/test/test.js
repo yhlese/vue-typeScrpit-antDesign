@@ -25,6 +25,8 @@ vue.prototype.observe = function() {
 };
 
 vue.prototype.render = function() {
+  // diff 算法对比，更新 virtual dom
   this.ast = 'i am ' + this.$data.a;
+  // 视图渲染
   this.el.innerHTML = this.ast;
 };
