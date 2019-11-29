@@ -1,7 +1,7 @@
 import { userRoleConfig } from '@/config';
 import store from '@/store';
 import router from '@/router';
-const $cookies = require('vue-cookies');
+// const $cookies = require('vue-cookies');
 
 /**
  * @description 用于处理不同角色存入不同的值
@@ -15,6 +15,16 @@ function filterUser(role: number | string = store.state.userInfo.role): any {
     }
   }
   return _userItem;
+}
+
+// 截取code
+function GetUrlParame(parameName: string) {
+  // 获取地址栏指定参数的值
+  const arr = location.href.match(new RegExp(`${parameName}=(.{1,50})(&[a-zA-Z]{1,})?`, 'i'));
+  if (arr && arr.length > 1) {
+    return arr[1].split('&')[0];
+  }
+  return '';
 }
 
 /**
@@ -51,7 +61,8 @@ class roleInfoSetting {
    * @returns 返回是否 cookies 中是否有该值
    */
   public static hasToken(key: number | string): Boolean {
-    return String($cookies.get(key)) !== 'null';
+    // return String($cookies.get(key)) !== 'null';
+    return String(sessionStorage.getItem(String(key))) !== 'null';
   }
 }
 
@@ -89,23 +100,28 @@ class storeInfoSetting {
    */
   public static setCookies(token: string, role?: string | number): void {
     let userKey: string = filterUser(role).key;
-    $cookies.set(userKey, token);
+    // $cookies.set(userKey, token);
+    sessionStorage.setItem(userKey, token);
   }
   /**
    * @description 获取 cookies token
    */
-  public static getCookies(): string {
+  public static getCookies() {
     let userKey: string = filterUser().key;
-    return $cookies.get(userKey);
+    // return $cookies.get(userKey);
+    return sessionStorage.getItem(userKey);
   }
   /**
    * @description 清除数据 cookies localStorages值
    */
   public static clearInfo(): void {
     let userKey = filterUser();
+    localStorage[`${GetUrlParame('sysPlat')}-storeIndexPath`] = '';
+    localStorage[`${GetUrlParame('sysPlat')}-seriecode`] = '';
     store.commit('user/setInfo', {});
     store.commit('user/setRole', userRoleConfig.companyUser.value);
-    $cookies.remove(userKey.key);
+    // $cookies.remove(userKey.key);
+    sessionStorage.removeItem(userKey.key);
     router.replace(userKey.routerLoginName);
     localStorage.removeItem(userKey.key);
   }
