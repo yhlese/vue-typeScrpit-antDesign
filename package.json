@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "vue-cli-service serve",
+    "dev": "npm run start",
+    "start": "npm run serve:watch",
+    "server": "vue-cli-service serve",
+    "watch": "node ./watch.js",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "prettier": "prettier --write src/**/*.vue src/**/*.js src/**/*.ts src/**/*.scss"
@@ -13,7 +16,9 @@
     "axios": "^0.19.0",
     "core-js": "^2.6.5",
     "el-input-validate": "^0.1.8",
+    "fs-extra": "^8.1.0",
     "qs": "^6.9.1",
+    "shelljs": "^0.8.3",
     "ts-loader": "^6.0.4",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
@@ -21,7 +26,8 @@
     "vue-property-decorator": "^8.1.0",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1",
-    "vuex-class": "^0.3.2"
+    "vuex-class": "^0.3.2",
+    "watch": "^1.0.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",

@@ -1,12 +1,4 @@
-const files = require.context('./modules', false, /\.ts$/);
-const ROUTERS: any = [];
-
-files.keys().forEach(key => {
-  ROUTERS.push(files(key).default);
-});
-const frameIn = [...ROUTERS];
-
-const frameOut = [
+module.exports = [
   {
     path: '/',
     name: 'Index',
@@ -20,11 +12,6 @@ const frameOut = [
     },
     component: () => import('@/views/login/index.vue'),
   },
-];
-
-export default [
-  ...frameOut,
-  ...frameIn,
   {
     path: '*',
     name: '404',
