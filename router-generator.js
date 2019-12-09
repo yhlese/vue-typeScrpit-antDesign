@@ -6,12 +6,12 @@ const viewRoot = path.resolve(__dirname, './src/views');
 // 无需menu的路由列表
 const withoutMenuList = ['login'];
 // 不需要加入动态路由的列表
-const ignoreFileLsit = [];
-const baseModle = require(__dirname, './src/router/base.ts');
+const ignoreFileList = [];
+const baseModle = require('./src/router/base.ts');
 baseModle.forEach(item => {
-  ignoreFileLsit.push(item.name);
+  ignoreFileList.push(item.name);
 });
-
+console.log();
 // 存储路由生成
 let modules = [];
 // 不需要进行递归的文件、文件夹
@@ -21,8 +21,7 @@ const reg = /\.DS_Store/i;
 
 const walk = (callback, path = viewRoot) => {
   // 返回目录中所有的文件名
-  const files = fs.readFileSync(path);
-  console.log('files', files);
+  const files = fs.readdirSync(path);
   stopWalkReg.lastIndex = 0;
   if (stopWalkReg.test(path)) return;
   files.forEach(file => {
@@ -47,7 +46,7 @@ const walk = (callback, path = viewRoot) => {
  */
 
 walk((actualPath, fileName) => {
-  if (ignoreFileLsit.indexOf(fileName) > -1) return;
+  if (ignoreFileList.indexOf(fileName) > -1) return;
 
   let routePath = actualPath.replace(viewRoot, '');
   let tName = fileName;
@@ -92,7 +91,7 @@ walk((actualPath, fileName) => {
     }
   }`;
 
-  if (ignoredFileList.indexOf(name) < 0) {
+  if (ignoreFileList.indexOf(name) < 0) {
     modules.push(routeUnit);
   }
 });
