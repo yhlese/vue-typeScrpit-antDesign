@@ -15,12 +15,12 @@ export const menuAside = [
       {
         title: '文章',
         icon: 'snippets',
-        path: '/content/article',
+        path: '/content/article/index',
       },
       {
         title: '项目',
         icon: 'snippets',
-        path: '/content/project',
+        path: '/content/project/index',
       },
     ],
   },

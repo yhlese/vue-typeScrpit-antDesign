@@ -1,40 +1,56 @@
 export default [
   {
-    path: "/content",
-    name: "content",
-    component: () => import("@/pages/content.vue"),
+    path: "/content/article/add",
+    name: "content-article-add",
+    component: () => import("@/views/content/article/add.vue"),
     meta: {
       withMenu: true,
       ignoreCollapseMenu: false,
     }
   },{
-    path: "/error-page-404",
-    name: "error-page-404",
-    component: () => import("@/pages/error-page-404.vue"),
+    path: "/content/article/index",
+    name: "content-article-index",
+    component: () => import("@/views/content/article/index.vue"),
     meta: {
       withMenu: true,
       ignoreCollapseMenu: false,
     }
   },{
-    path: "/index",
-    name: "index",
-    component: () => import("@/pages/index.vue"),
+    path: "/content/index",
+    name: "content-index",
+    component: () => import("@/views/content/index.vue"),
     meta: {
       withMenu: true,
       ignoreCollapseMenu: false,
     }
   },{
-    path: "/login",
-    name: "login",
-    component: () => import("@/pages/login.vue"),
+    path: "/content/project/index",
+    name: "content-project-index",
+    component: () => import("@/views/content/project/index.vue"),
     meta: {
-      withMenu: false,
+      withMenu: true,
       ignoreCollapseMenu: false,
     }
   },{
-    path: "/setting",
-    name: "setting",
-    component: () => import("@/pages/setting.vue"),
+    path: "/setting/index",
+    name: "setting-index",
+    component: () => import("@/views/setting/index.vue"),
+    meta: {
+      withMenu: true,
+      ignoreCollapseMenu: false,
+    }
+  },{
+    path: "/setting/set",
+    name: "setting-set",
+    component: () => import("@/views/setting/set.vue"),
+    meta: {
+      withMenu: true,
+      ignoreCollapseMenu: false,
+    }
+  },{
+    path: "/setting/user",
+    name: "setting-user",
+    component: () => import("@/views/setting/user.vue"),
     meta: {
       withMenu: true,
       ignoreCollapseMenu: false,

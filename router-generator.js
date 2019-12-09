@@ -11,7 +11,6 @@ const baseModle = require('./src/router/base.ts');
 baseModle.forEach(item => {
   ignoreFileList.push(item.name);
 });
-console.log();
 // 存储路由生成
 let modules = [];
 // 不需要进行递归的文件、文件夹
@@ -26,7 +25,7 @@ const walk = (callback, path = viewRoot) => {
   if (stopWalkReg.test(path)) return;
   files.forEach(file => {
     stopWalkReg.lastIndex = 0;
-    if (fs.statSync(path + '/' + file)) {
+    if (fs.statSync(path + '/' + file).isFile()) {
       if (!reg.test(file)) {
         callback(path, file.replace(/\.vue$/i, ''));
       }
@@ -84,7 +83,7 @@ walk((actualPath, fileName) => {
   const routeUnit = `{
     path: "${pathRes}",
     name: "${name}",
-    component: () => import("@/pages${routePath}/${fileName}.vue"),
+    component: () => import("@/views${routePath}/${fileName}.vue"),
     meta: {
       withMenu: ${withoutMenuList.indexOf(fileName) < 0},
       ignoreCollapseMenu: ${fileName.indexOf('.') > 0},

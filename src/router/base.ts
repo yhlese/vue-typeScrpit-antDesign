@@ -1,20 +1,20 @@
 module.exports = [
   {
     path: '/',
-    name: 'Index',
-    component: () => import('@/views/index.vue'),
+    name: 'home',
+    component: () => import('@/views/home.vue'),
   },
   {
     path: '/login',
-    name: 'Login',
+    name: 'login',
     meta: {
       frameOut: true,
     },
-    component: () => import('@/views/login/index.vue'),
+    component: () => import('@/views/login.vue'),
   },
   {
     path: '*',
-    name: '404',
-    component: () => import('@/views/error-page-404/index.vue'),
+    name: 'notFound',
+    component: () => import('@/views/notFound.vue'),
   },
 ];
