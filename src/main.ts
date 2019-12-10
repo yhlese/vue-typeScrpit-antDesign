@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from '@/router';
-import store from './store/index';
+import store from '@/store/index';
 import vueI18n from 'vue-i18n';
 import './plugins/ant-design';
 import mixin from '@/mixins/index.mixin';

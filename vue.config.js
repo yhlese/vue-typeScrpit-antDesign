@@ -5,7 +5,24 @@ process.env.VUE_APP_VERSION = require("./package.json").version;
 // 线上斜杠
 let publicPath = process.env.VUE_APP_PUBLIC_PATH;
 
+const PROXY = {
+  target: process.env.VUE_APP_API, // 使用.env.*.local来管理环境变量
+  changeOrigin: true,
+};
+
 module.exports = {
+  publicPath,
+  // 是否
+  lintOnSave: true,
+  //source map，可以将其设置为 false 以加速生产环境构建
+  productionSourceMap: false,
+  devServer: {
+    publicPath, // 和 publicPath 保持一致
+    proxy: {
+      '/gmp': PROXY,
+      '/infrastructure-service': PROXY,
+    }
+  },
   // 默认设置: https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-service/lib/config/base.js
   chainWebpack: config => {
     /**
