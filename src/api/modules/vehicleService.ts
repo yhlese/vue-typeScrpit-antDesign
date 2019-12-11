@@ -13,15 +13,15 @@ const VHICLE_DELETE = (url: string, params = {}, config?: AxiosRequestConfig): a
   service.delete(prefix + url, { params }, config);
 
 export function access_getUserAc_menu_api(params = {}, config = {}) {
-  return VHICLE_POST('access/getUserAc', params, config);
+  return VHICLE_POST('a/1', params, config);
 }
 
 export function highlightsList(params = {}, config = {}) {
-  return VHICLE_GET('vehicle/highlights/list', params, config);
+  return VHICLE_GET('a/1', params, config);
 }
 export function highlightsEdit(params = {}, config = {}) {
-  return VHICLE_PUT('vehicle/highlights/edit', params, config);
+  return VHICLE_PUT('a/1', params, config);
 }
 export function highlightsDelete(id: string) {
-  return VHICLE_DELETE(`vehicle/highlights/${id}`);
+  return VHICLE_DELETE(`a/1/${id}`);
 }
