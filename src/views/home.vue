@@ -1,12 +1,10 @@
 <template>
-  <div class="index"
-       ref="downlodaRef">
+  <div class="index" ref="downlodaRef">
     <p>这是用户名：{{ stateUserInfo.name }}</p>
     <p>getter：{{ _getterName }}</p>
     <a-button @click="editInfo">修改用户信息Mutation</a-button>
     <a-button @click="getInfo">获取用户信息Action</a-button>
     <a-button @click="downloadRecord">点击下载图片</a-button>
-
   </div>
 </template>
 
