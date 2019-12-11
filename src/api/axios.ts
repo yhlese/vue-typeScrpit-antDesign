@@ -13,12 +13,7 @@ const service: any = axios.create({
 // 请求拦截器
 service.interceptors.request.use(
   (config: any) => {
-    let token: string;
-    token =
-      (!config.url.includes('login') &&
-        !config.url.includes('forgetAndModifyPassword') &&
-        storeInfoSetting.getCookies()) ||
-      '';
+    let token: string = '';
     // 请求携带token-- ['X-AUTH-TOKEN']为自定义key
     config.headers['X-AUTH-TOKEN'] = token;
     return config;

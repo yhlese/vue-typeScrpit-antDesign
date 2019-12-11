@@ -10,4 +10,5 @@
 
 // export default modules;
 
+export * from './modules/userService';
 export * from './modules/vehicleService';

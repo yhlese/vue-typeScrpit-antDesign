@@ -20,7 +20,6 @@ module.exports = {
     publicPath, // 和 publicPath 保持一致
     proxy: {
       '/gmp': PROXY,
-      '/infrastructure-service': PROXY,
     }
   },
   // 默认设置: https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-service/lib/config/base.js

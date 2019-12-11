@@ -6,7 +6,7 @@
     "dev": "npm run start",
     "start": "npm run serve:watch",
     "serve:watch": "concurrently \"npm run watch\" \"npm run serve\"",
-    "serve": "vue-cli-service serve --mode development",
+    "serve": "vue-cli-service serve --mode test",
     "watch": "node ./watch.js",
     "build": "vue-cli-service build",
     "build:dev": "npm run generate:route && vue-cli-service build --mode develop",
