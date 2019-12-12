@@ -15,7 +15,7 @@ import Container from '@/components/container/index.vue';
 export default class App extends Vue {
   private frameOut: boolean = false;
   private created() {
-    (<any>window).geely_app_version = process.env.VUE_APP_VERSION;
+    (<any>window).version = process.env.VUE_APP_VERSION;
     console.log('version =>', process.env.VUE_APP_VERSION);
   }
 }
