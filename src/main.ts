@@ -7,7 +7,7 @@ import './plugins/ant-design';
 import mixin from '@/mixins/index.mixin';
 import Component from 'vue-class-component';
 import axios from '@/api/axios';
-import "@/directive/dragger.ts";
+import '@/directive/dragger.ts';
 Vue.config.productionTip = false;
 Vue.use(vueI18n);
 Vue.mixin(mixin);
