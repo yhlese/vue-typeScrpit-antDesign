@@ -4998,6 +4998,11 @@ loose-envify@^1.0.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
+lottie-web@^5.1.9:
+  version "5.6.0"
+  resolved "https://registry.npmjs.org/lottie-web/-/lottie-web-5.6.0.tgz#3b151caac8bfc8ce2076ffecaa5bd4606994d53b"
+  integrity sha512-SR/j+jHr6cL2D0hkVTCX78fANSuKwgFi7di/JB+x6soPmDkIz1zmmAojbxFf+oFN8S1J+o7bVYlNoLL8TzAgNg==
+
 loud-rejection@^1.0.0:
   version "1.6.0"
   resolved "https://registry.npm.taobao.org/loud-rejection/download/loud-rejection-1.6.0.tgz#5b46f80147edee578870f086d04821cf998e551f"
@@ -8289,6 +8294,13 @@ vue-loader@^15.7.0:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-lottie@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.npmjs.org/vue-lottie/-/vue-lottie-0.2.1.tgz#f9f62c34a276e6834255406118fb05b51f765e4b"
+  integrity sha512-zInUX69Ij8MhVR3XArpu4PqqBoufwKxS5UMutWCPm59VUaB5H6GtnaIzf9M+l6aYU+Kr8gF/W9dzWLgRuU6V+Q==
+  dependencies:
+    lottie-web "^5.1.9"
 
 vue-property-decorator@^8.1.0:
   version "8.2.1"

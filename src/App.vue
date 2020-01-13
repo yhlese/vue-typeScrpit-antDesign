@@ -2,6 +2,7 @@
   <div id="app">
     <router-view v-if="$route.meta && $route.meta.frameOut" />
     <container v-else></container>
+
   </div>
 </template>
 <script lang="ts">
