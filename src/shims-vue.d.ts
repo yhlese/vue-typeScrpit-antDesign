@@ -9,3 +9,4 @@ declare module '*.vue' {
 
 // 引用原有模块
 declare module 'echarts';
+declare module '@/assets/lottie/earth3.js';

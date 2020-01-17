@@ -1,5 +1,6 @@
 <template>
-  <div class="index" ref="downlodaRef">
+  <div class="index"
+       ref="downlodaRef">
     <p>这是用户名：{{ stateUserInfo.name }}</p>
     <p>getter：{{ _getterName }}</p>
     <a-button @click="editInfo">修改用户信息Mutation</a-button>
@@ -15,7 +16,12 @@ import { State, Getter, Action, Mutation, namespace } from 'vuex-class';
 import { storeInfoSetting } from '@/utils/userSetting';
 import html2canvas from 'html2canvas';
 import lottie from 'vue-lottie';
+/**
+ * @description Could not find a declaration file for module '@/assets/lottie/earth3.js' 报错
+ * 解决：在 shims-vue.d.ts 中声明 declare
+ *  */
 import earth from '@/assets/lottie/earth3.js';
+
 @Component({ components: { lottie } })
 export default class Index extends Vue {
   @State(state => state.user.userInfo) stateUserInfo: any;
