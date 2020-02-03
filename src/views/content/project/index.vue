@@ -17,7 +17,7 @@ export default class App extends Vue {
     }
   }
   created() {
-    this.getLoginCode();
+    // this.getLoginCode();
   }
 }
 </script>

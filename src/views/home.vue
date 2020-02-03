@@ -14,6 +14,7 @@
 import { Component, Prop, Vue, Ref } from 'vue-property-decorator';
 import { State, Getter, Action, Mutation, namespace } from 'vuex-class';
 import { storeInfoSetting } from '@/utils/userSetting';
+import { filterFalse, decimalsNumber } from '@/utils/common';
 import html2canvas from 'html2canvas';
 import lottie from 'vue-lottie';
 /**
@@ -58,7 +59,9 @@ export default class Index extends Vue {
     });
   }
 
-  created() {}
+  created() {
+    console.log(decimalsNumber(2.32432, 3));
+  }
 }
 </script>
 

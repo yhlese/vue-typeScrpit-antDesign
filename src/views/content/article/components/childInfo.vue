@@ -5,7 +5,8 @@
     <p>InjectReactive：{{ msg }}</p>
 
     <!-- 子组件 -->
-    <input v-bind:value="onValue" v-on:change="$emit('change', $event.target.value)" />
+    <input v-bind:value="onValue"
+           v-on:change="$emit('change', $event.target.value)" />
   </div>
 </template>
 
