@@ -6,7 +6,9 @@
     <a-button @click="editInfo">修改用户信息Mutation</a-button>
     <a-button @click="getInfo">获取用户信息Action</a-button>
     <a-button @click="downloadRecord">点击下载图片</a-button>
+    <a-button @click="clickDebounce">防抖測試</a-button>
     <lottie :options="defaultOptions"></lottie>
+
   </div>
 </template>
 
@@ -14,7 +16,7 @@
 import { Component, Prop, Vue, Ref } from 'vue-property-decorator';
 import { State, Getter, Action, Mutation, namespace } from 'vuex-class';
 import { storeInfoSetting } from '@/utils/userSetting';
-import { filterFalse, decimalsNumber } from '@/utils/common';
+import { filterFalse, decimalsNumber, debounce } from '@/utils/common';
 import html2canvas from 'html2canvas';
 import lottie from 'vue-lottie';
 /**
@@ -57,6 +59,13 @@ export default class Index extends Vue {
         a.click();
       });
     });
+  }
+
+  clickDebounce() {
+    console.log(1111);
+    debounce(() => {
+      console.log(222);
+    }, 1000)();
   }
 
   created() {

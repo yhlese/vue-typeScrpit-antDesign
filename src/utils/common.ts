@@ -44,3 +44,32 @@ export const decimalsNumber = (n: number, decimals: number) => {
  * @param 原始值，补位数
  */
 export const addPadStart = (n: number, len: number = 2) => `${n}`.padStart(len, '0');
+
+/**
+ * @description 防抖函数
+ */
+export const debounce = (fn: Function, delay: number) => {
+  let timer: number = 0;
+  return (...args: any) => {
+    timer && clearTimeout(timer);
+    timer = setTimeout(() => {
+      timer = 0;
+      fn(args);
+    }, delay);
+  };
+};
+
+/**
+ * @description 节流函数
+ */
+export const throttle = (fn: Function, delay = 500) => {
+  let flag = true;
+  return (...args: any) => {
+    if (!flag) return;
+    flag = false;
+    setTimeout(() => {
+      fn(args);
+      flag = true;
+    }, delay);
+  };
+};
