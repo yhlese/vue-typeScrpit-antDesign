@@ -15,3 +15,4 @@ files.keys().forEach((key): void => {
 export default new Vuex.Store({
   modules,
 });
+略略略
